@@ -18,8 +18,13 @@ public class Player : MonoBehaviour
     private int extraJump;
     public int extraJumpValue;
 
+    private Animator anim;
+
     void Start()
     {
+        anim = GetComponent<Animator>();
+
+
         extraJump = extraJumpValue;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -60,12 +65,16 @@ public class Player : MonoBehaviour
         {
             rb.linearVelocity = Vector2.up * jump;
             extraJump--;
+            
         }
         else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && extraJump == 0 && isHeGrounded == true)
         {
             rb.linearVelocity = Vector2.up * jump;
-
+            
         }
+
+        
+
     }
 
     private void flip()
