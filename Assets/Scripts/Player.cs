@@ -61,28 +61,27 @@ public class Player : MonoBehaviour
         {
             extraJump = extraJumpValue;
         }
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && extraJump > 0)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && extraJump > 0)
         {
             rb.linearVelocity = Vector2.up * jump;
             extraJump--;
             
         }
-        else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && extraJump == 0 && isHeGrounded == true)
+        else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && extraJump == 0 && isHeGrounded == true)
         {
             rb.linearVelocity = Vector2.up * jump;
-            
+
         }
 
-        
+
 
     }
 
     private void flip()
     {
         isHeFacingRight = !isHeFacingRight;
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
+
+        transform.Rotate(0f, 180f, 0f);
     }
 
 }
