@@ -18,6 +18,10 @@ public class Player : MonoBehaviour
     private int extraJump;
     public int extraJumpValue;
 
+    DeathZone deathZone;
+
+    [SerializeField] private int Lives = 3;
+
     private Animator anim;
 
     void Start()
@@ -65,7 +69,7 @@ public class Player : MonoBehaviour
         {
             rb.linearVelocity = Vector2.up * jump;
             extraJump--;
-            
+
         }
         else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && extraJump == 0 && isHeGrounded == true)
         {
@@ -82,6 +86,33 @@ public class Player : MonoBehaviour
         isHeFacingRight = !isHeFacingRight;
 
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    public void DamagePlayer()
+    {
+        Lives--;
+        if (Lives <= 0)
+        {
+            //animator.SetTrigger("Dead");
+
+           enabled = false;
+        }
+        else
+        {
+            //animator.SetTrigger("Hurt");
+            
+            deathZone.restartLevel();
+        }
+    }
+
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == ("MovingPlatform"))
+        {
+            transform.parent = collision.transform;
+        }
+
     }
 
 }
