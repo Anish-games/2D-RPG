@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
     DeathZone deathZone;
 
-    [SerializeField] private int Lives = 3;
+    [SerializeField] private int Lives = 100;
 
     private Animator anim;
 
@@ -95,13 +95,14 @@ public class Player : MonoBehaviour
         {
             //animator.SetTrigger("Dead");
 
-           enabled = false;
+            enabled = false;
+            deathZone.restartLevel();
         }
         else
         {
             //animator.SetTrigger("Hurt");
+
             
-            deathZone.restartLevel();
         }
     }
 
@@ -114,5 +115,15 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "MovingPlatform")
+        {
+            transform.parent = null;
+        }
+    }
+
+
 
 }

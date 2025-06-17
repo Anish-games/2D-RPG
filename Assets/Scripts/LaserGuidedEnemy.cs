@@ -8,7 +8,7 @@ public class LaserGuidedEnemy : MonoBehaviour
     public Material defaultShader;
     public Material hitShader;
 
-    Player player;
+    public Player player;
     void Start()
     {
         lineRenderer.positionCount = 2; // Ensure two points exist
@@ -28,7 +28,7 @@ public class LaserGuidedEnemy : MonoBehaviour
             if (hitInfo.collider.CompareTag("Player"))
             {
                 lineRenderer.material = hitShader; // Switch shader on player hit
-                //player.DamagePlayer();
+                player.DamagePlayer();
             }
             else
             {

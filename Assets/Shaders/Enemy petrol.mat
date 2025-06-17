@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Lazer_mat
+  m_Name: Enemy petrol
   m_Shader: {fileID: -6465566751694194690, guid: 5214d08a7742fc948995de3f4e78aba6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,8 +54,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _EgeSmooth: 1.9
-    - _Thickness: 9.53
+    - _EgeSmooth: 1.58
+    - _Thickness: 5.53
     m_Colors:
     - _Color: {r: 0, g: 1500.1362, b: 15368.523, a: 1}
     - _Speed: {r: 1, g: 1, b: 0, a: 0}
