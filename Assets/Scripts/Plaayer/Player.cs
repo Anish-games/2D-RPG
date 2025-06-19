@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public ParticleSystem dust;
+
     private Rigidbody2D rb;
 
     public float speed;
@@ -20,7 +22,7 @@ public class Player : MonoBehaviour
 
     DeathZone deathZone;
 
-    [SerializeField] private int Lives = 100;
+    public int Lives = 100;
 
     private Animator anim;
 
@@ -49,10 +51,12 @@ public class Player : MonoBehaviour
             if (isHeFacingRight == false && moveInput > 0)
             {
                 flip();
+                
             }
             else if (isHeFacingRight == true && moveInput < 0)
             {
                 flip();
+                
             }
 
         }
@@ -85,6 +89,7 @@ public class Player : MonoBehaviour
     {
         isHeFacingRight = !isHeFacingRight;
 
+        Createdust();
         transform.Rotate(0f, 180f, 0f);
     }
 
@@ -96,13 +101,13 @@ public class Player : MonoBehaviour
             //animator.SetTrigger("Dead");
 
             enabled = false;
-            deathZone.restartLevel();
+            //deathZone.restartLevel();
         }
         else
         {
             //animator.SetTrigger("Hurt");
 
-            
+
         }
     }
 
@@ -122,6 +127,12 @@ public class Player : MonoBehaviour
         {
             transform.parent = null;
         }
+    }
+
+
+    void Createdust()
+    {
+        dust.Play();
     }
 
 
