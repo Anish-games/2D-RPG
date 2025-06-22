@@ -2,7 +2,7 @@ using NUnit;
 using System;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class DestroyableObj : MonoBehaviour
 {
     public float enemyHealth;
     public GameObject deadEffect;

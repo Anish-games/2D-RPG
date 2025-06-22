@@ -15,11 +15,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Enemy enemy = collision.GetComponent<Enemy>();
+        DestroyableObj destroy = collision.GetComponent<DestroyableObj>();
 
-        if (enemy != null)
+        if (destroy != null)
         {
-            enemy.takeDamage(damage);
+            destroy.takeDamage(damage);
         }
         
         Instantiate(damageEffect , transform.position , transform.rotation);
