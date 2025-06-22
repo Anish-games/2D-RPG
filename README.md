@@ -1,4 +1,3 @@
-![Screenshot 2025-06-19 002038](https://github.com/user-attachments/assets/cf8e833a-ce86-4b1d-9138-ef31f66dea6a)Player
 The player can move and jump using W, A, S, D.
 The player can shoot using the Spacebar.
 Patrolling Enemy
