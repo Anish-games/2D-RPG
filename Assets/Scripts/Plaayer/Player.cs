@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
     private Animator anim;
 
+    
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -101,7 +102,7 @@ public class Player : MonoBehaviour
             //animator.SetTrigger("Dead");
 
             enabled = false;
-            //deathZone.restartLevel();
+            GameManager.Instance.ShowLoseScreen();
         }
         else
         {

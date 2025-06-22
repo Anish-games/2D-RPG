@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Laser def
+  m_Name: Laser def 1
   m_Shader: {fileID: -6465566751694194690, guid: 5214d08a7742fc948995de3f4e78aba6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -57,7 +57,7 @@ Material:
     - _EgeSmooth: 2.07
     - _Thickness: 8.64
     m_Colors:
-    - _Color: {r: 48826.91, g: 48826.91, b: 48826.91, a: 1}
+    - _Color: {r: 7099.729, g: 36572.312, b: 0, a: 1}
     - _Speed: {r: -5.67, g: -2.99, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
