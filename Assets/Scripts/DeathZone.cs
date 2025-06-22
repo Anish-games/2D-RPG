@@ -1,23 +1,21 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DeathZone : MonoBehaviour
 {
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            restartLevel();
+            collision.GetComponent<Player>().enabled = false;
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.ShowLoseScreen();
+            }
+            else
+            {
+                Debug.LogWarning("GameManager.Instance is null in DeathZone!");
+            }
         }
     }
-
-    public void restartLevel()
-    {
-        
-       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
-    }
-
 }

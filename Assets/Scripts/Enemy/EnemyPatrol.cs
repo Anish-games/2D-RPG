@@ -38,11 +38,12 @@ public class EnemyPatrol : MonoBehaviour
         transform.Translate(Vector2.right * moveDirection * speed * Time.deltaTime);
 
         RaycastHit2D groundInfo = Physics2D.Raycast(edgeDetection.position, Vector2.down, groundCheckDistance);
-        if (groundInfo.collider == null)
+        if (groundInfo.collider == null || !groundInfo.collider.CompareTag("Ground"))
         {
             Flip();
         }
     }
+
 
     public void Flip()
     {
